@@ -1,0 +1,404 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  font-family: "Ubuntu", sans-serif;
+}
+
+*::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(70, 70, 70, 0.5);
+  border-radius: 10px;
+  background-color: transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 12px;
+  background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(70, 70, 70, 0.5);
+  background-color: rgba(70, 70, 70, 0.5);
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.overflow-overlay {
+  overflow: overlay;
+}
+
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
+}
+
+.wrapper {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.layover {
+  background-color: rgba(70, 70, 70, 0.7);
+}
+
+.button-style,
+.input-style {
+  padding: 10px;
+  border-radius: 15px;
+  border: none;
+  vertical-align: middle;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 15px;
+}
+
+.button-style {
+  font-weight: bold;
+}
+
+.input-style {
+  padding-right: 50px;
+}
+.input-style:focus {
+  outline: none;
+  box-shadow: 0 0 3pt 2pt #fec20f;
+}
+
+.card {
+  position: relative;
+  height: 600px;
+  padding: 0;
+  margin-bottom: 30px;
+  background-color: #fec20f;
+  color: #1c1f4c;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.card .img-container {
+  height: 30%;
+  margin: 0;
+  overflow: hidden;
+}
+.card .img-container img {
+  width: 100%;
+  -o-object-position: center;
+     object-position: center;
+}
+.card > *:not(img) {
+  margin: 20px;
+}
+.card h3 {
+  height: 10%;
+}
+.card h4 {
+  margin-bottom: 5px;
+}
+.card p {
+  margin-top: 5px;
+  font-size: 1.2em;
+}
+.card button {
+  background-color: #1c1f4c;
+  color: white;
+}
+.card .starting-soon {
+  position: absolute;
+  left: 0;
+  top: 5%;
+  padding: 10px;
+  background-color: #00848c;
+  color: white;
+}
+
+.info, #login-form, #registration-form {
+  position: fixed;
+  z-index: 2;
+  padding: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 600px;
+  width: 1100px;
+  background-color: white;
+  color: #1c1f4c;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.info .row > *, #login-form .row > *, #registration-form .row > * {
+  padding: 10px 20px;
+}
+.info .row > *.col-sm-4, #login-form .row > *.col-sm-4, #registration-form .row > *.col-sm-4 {
+  background-color: #1c1f4c;
+  color: white;
+  height: calc(600px - 130px);
+}
+.info .row > *.col-sm-8, #login-form .row > *.col-sm-8, #registration-form .row > *.col-sm-8 {
+  height: calc(600px - 130px);
+  overflow: overlay;
+}
+.info .row > *.col-sm-8 li, #login-form .row > *.col-sm-8 li, #registration-form .row > *.col-sm-8 li {
+  margin-left: 15px;
+}
+.info > div:first-child, #login-form > div:first-child, #registration-form > div:first-child {
+  margin: 0;
+  padding: 20px 40px;
+  height: 60px;
+  text-align: right;
+  background-color: #fec20f;
+}
+.info > div:first-child i, #login-form > div:first-child i, #registration-form > div:first-child i {
+  cursor: pointer;
+  color: #1c1f4c;
+}
+.info h3, #login-form h3, #registration-form h3 {
+  margin: 0;
+  padding: 30px 40px;
+  padding-top: 10px;
+  height: 70px;
+  background-color: #fec20f;
+  color: #1c1f4c;
+}
+.info div.col-xs-12.col-sm-8 div.col-xs-12:nth-last-child(2), #login-form div.col-xs-12.col-sm-8 div.col-xs-12:nth-last-child(2), #registration-form div.col-xs-12.col-sm-8 div.col-xs-12:nth-last-child(2) {
+  margin-bottom: 50px;
+}
+.info div.col-xs-12.col-sm-8 button, #login-form div.col-xs-12.col-sm-8 button, #registration-form div.col-xs-12.col-sm-8 button {
+  color: white;
+  background-color: #1c1f4c;
+}
+
+#login-form, #registration-form {
+  height: auto;
+  width: 50%;
+}
+#login-form .form-group, #registration-form .form-group {
+  margin: 20px;
+}
+#login-form .form-group:last-child, #registration-form .form-group:last-child {
+  text-align: right;
+}
+#login-form .form-group input, #registration-form .form-group input {
+  border: 2px solid #fec20f;
+  width: 100%;
+}
+#login-form .form-group button, #registration-form .form-group button {
+  background-color: #1c1f4c;
+  color: white;
+}
+
+#content {
+  position: relative;
+}
+
+#login h2 {
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+#layover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
+header {
+  width: 100%;
+  background-color: #fec20f;
+  color: #1c1f4c;
+  height: 80px;
+}
+header .wrapper {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 40px;
+  align-content: center;
+}
+header .wrapper h1 {
+  vertical-align: middle;
+}
+header .wrapper h1 a {
+  color: #1c1f4c;
+}
+header .wrapper #login {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+header .wrapper #hamburger {
+  position: relative;
+}
+header .wrapper #hamburger i {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+}
+header .wrapper #hamburger #cloud {
+  position: absolute;
+  background-color: white;
+  color: #1c1f4c;
+  top: 85px;
+  right: 0;
+  border-radius: 15px;
+  z-index: 1;
+}
+header .wrapper #hamburger #cloud h2 {
+  margin: 20px;
+}
+
+#jumbotron {
+  width: 100%;
+  position: relative;
+}
+#jumbotron .background {
+  position: relative;
+  height: calc(100vh - 80px);
+  filter: brightness(50%);
+  overflow: hidden;
+}
+#jumbotron .background img {
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#jumbotron .wrapper {
+  position: absolute;
+  top: 0;
+  left: 10%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  filter: brightness(100%);
+}
+#jumbotron h1 {
+  font-size: 60px;
+  color: white;
+}
+#jumbotron h1 span {
+  color: #fec20f;
+}
+#jumbotron h2 {
+  color: white;
+}
+#jumbotron #search-course {
+  position: relative;
+  margin-top: 40px;
+  color: white;
+  width: 100%;
+}
+#jumbotron #search-course input {
+  position: absolute;
+  width: 100%;
+  height: 40px;
+  background-color: rgba(250, 250, 250, 0.5);
+  color: #1c1f4c;
+}
+#jumbotron #search-course button {
+  position: absolute;
+  right: 0;
+  vertical-align: middle;
+  height: 40px;
+  background-color: #fec20f;
+  color: #1c1f4c;
+}
+#jumbotron #search-course button:hover {
+  cursor: pointer;
+}
+
+#suggestions {
+  padding-top: 40px;
+  position: relative;
+}
+#suggestions h1 {
+  margin-bottom: 40px;
+  color: #1c1f4c;
+}
+#suggestions button {
+  position: absolute;
+  margin: 0;
+  right: 20px;
+  bottom: 20px;
+}
+#suggestions #card-search {
+  height: 600px;
+  position: relative;
+}
+#suggestions #card-search div {
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: right;
+}
+#suggestions #card-search a, #suggestions #card-search i {
+  color: #1c1f4c;
+}
+
+footer {
+  margin-top: 40px;
+  height: 200px;
+  background-color: #fec20f;
+}
+
+@media screen and (max-width: 420px) {
+  .card img {
+    height: 100%;
+  }
+  .card h3 {
+    height: auto;
+  }
+
+  .info, #registration-form, #login-form {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    border-radius: 0;
+  }
+  .info > h3, #registration-form > h3, #login-form > h3 {
+    height: 90px;
+  }
+  .info > .container-fluid, #registration-form > .container-fluid, #login-form > .container-fluid {
+    height: calc(100vh - 60px - 90px);
+    overflow: overlay;
+  }
+  .info > .container-fluid .row > *.col-sm-4, #registration-form > .container-fluid .row > *.col-sm-4, #login-form > .container-fluid .row > *.col-sm-4 {
+    height: auto;
+  }
+  .info > .container-fluid .row > *.col-sm-8, #registration-form > .container-fluid .row > *.col-sm-8, #login-form > .container-fluid .row > *.col-sm-8 {
+    height: auto;
+  }
+
+  header .wrapper {
+    padding: 0;
+  }
+
+  #search-course button {
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  #jumbotron h1 {
+    font-size: 40px;
+    text-align: center;
+  }
+
+  #suggestions h1 {
+    text-align: center;
+  }
+}

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/favicon-256x256.png" type="image/png"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.dotdotdot/4.1.0/dotdotdot.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="dist/style.css">
+    <title>EduCineca</title>
+</head>
+<body class="overflow-overlay">
+    <div id="root">
+        <div id="content">
+            <div id="layover" class="display-none layover"></div>
+            <header>
+                <div class="wrapper">
+                    <h1>EduCineca</h1>
+                    <div id="login" class="hidden-xs">
+                        <h2 v-on:click="openRegistrationForm">Registrati</h2>
+                        <h2 v-on:click="openLoginForm">Login</h2>
+                    </div>
+                    <div id="hamburger" class="visible-xs-block" v-on:click="openHamburger">
+                        <i class="fas fa-bars"></i>
+                        <div id="cloud" class="display-none">
+                            <h2 v-on:click="openRegistrationForm">Registrati</h2>
+                            <h2 v-on:click="openLoginForm">Login</h2>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <main v-on:click="closeHamburger">
+                <div id="registration-form" class="display-none">
+                    <div>
+                        <i class="fas fa-times" v-on:click="closeRegistrationForm"></i>
+                    </div>
+                    <h3>Registrazione</h3>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <form>
+                                    <div class="form-group">
+                                        <label class="display-block" for="nome">Nome</label>
+                                        <input id="nome" type="text" class="input-style" placeholder="Inserisci il tuo nome">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="display-block" for="cognome">Cognome</label>
+                                        <input id="last-name" type="text" class="input-style" placeholder="Inserisci il tuo cognome">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="display-block" for="email">Indirizzo E-Mail</label>
+                                        <input id="email" type="text" class="input-style" placeholder="Inserisci il tuo indirizzo e-mail">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="display-block" for="password">Password</label>
+                                        <input id="password" type="text" class="input-style" placeholder="Digita una password">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="display-block" for="password-confirm">Conferma Password</label>
+                                        <input id="password-confirm" type="text" class="input-style" placeholder="Conferma la password">
+                                    </div>
+                                    <div class="form-group">
+                                        <button class="button-style" type="submit">Registrati</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="login-form" class="display-none">
+                    <div>
+                        <i class="fas fa-times" v-on:click="closeLoginForm"></i>
+                    </div>
+                    <h3>Login</h3>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <form>
+                                    <div class="form-group">
+                                        <label class="display-block" for="email-login">Indirizzo E-Mail</label>
+                                        <input id="email-login" type="text" class="input-style" placeholder="Inserisci il tuo indirizzo e-mail">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="display-block" for="password-login">Password</label>
+                                        <input id="password-login" type="text" class="input-style" placeholder="Inserisci la tua password">
+                                    </div>
+                                    <div class="form-group">
+                                        <button class="button-style" type="submit">Entra</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="jumbotron">
+                    <div class="background">
+                        <img src="img/jumbo.jpg">
+                    </div>
+                    <div class="wrapper">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-6">
+                                    <h1>
+                                        <span>EduCineca</span> si occupa della tua formazione IT
+                                    </h1>
+                                    <div id="search-course">
+                                        <form>
+                                            <input class="input-style" type="text" placeholder="Inserisci una parola chiave...">
+                                            <button class="button-style" type="submit">Cerca un corso</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="suggestions">
+                    <div class="wrapper">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <h1>I corsi più consigliati</h1>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-4" v-for="(course,index) in courses">
+                                    <div class="card">
+                                        <div class="img-container">
+                                            <img :src="course.image">
+                                            <div class="starting-soon" v-if="course.more.startingSoon">
+                                                Inizierà tra pochi giorni!
+                                            </div>
+                                        </div>
+                                        <h3>{{course.name}}</h3>
+                                        <div>
+                                            <p v-html="'<b>Area: </b>' + course.more.area"></p>
+                                            <p v-html="'<b>Target: </b>' + course.more.target"></p>
+                                            <p v-html="'<b>Provides as: </b>' + course.more.providedAs"></p>
+                                            <p v-html="'<b>Length: </b>' + course.more.length"></p>
+                                            <p v-html="'<b>Minimum attendants: </b>' + course.more.minimumAttendants"></p>
+                                            <p v-html="'<b>Next start: </b>' + course.more.nextStart"></p>
+                                        </div>
+                                        <button class="button-style discover-info" v-on:click="openInfo(index)">Scopri di più</button>
+                                    </div>
+                                    <div class="info display-none">
+                                        <div>
+                                            <i class="fas fa-times" v-on:click="closeInfo(index)"></i>
+                                        </div>
+                                        <h3>{{course.name}}</h3>
+                                        <div class="container-fluid">
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-4">
+                                                    <div class="container-fluid">
+                                                        <div class="row">
+                                                            <div class="col-xs-12">
+                                                                <h4>Target audience</h4>
+                                                                <p v-html="course.targetAudience"></p>
+                                                            </div>
+                                                            <div class="col-xs-12">
+                                                                <h4>More Info</h4>
+                                                                <p v-html="'<b>Area: </b>' + course.more.area"></p>
+                                                                <p v-html="'<b>Target: </b>' + course.more.target"></p>
+                                                                <p v-html="'<b>Provides as: </b>' + course.more.providedAs"></p>
+                                                                <p v-html="'<b>Length: </b>' + course.more.length"></p>
+                                                                <p v-html="'<b>Minimum attendants: </b>' + course.more.minimumAttendants"></p>
+                                                                <p v-html="'<b>Next start: </b>' + course.more.nextStart"></p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-8">
+                                                    <div class="container-fluid">
+                                                        <div class="row">
+                                                            <div class="col-xs-12">
+                                                                <h4>Description</h4>
+                                                                <p v-html="course.description"></p>
+                                                            </div>
+                                                            <div class="col-xs-12">
+                                                                <h4>Skills</h4>
+                                                                <p v-html="course.skills"></p>
+                                                            </div>
+                                                            <div class="col-xs-12">
+                                                                <h4>Pre-Requisites</h4>
+                                                                <p v-html="course.preRequisites"></p>
+                                                            </div>
+                                                            <div class="col-xs-12">
+                                                                <button class="button-style">Iscriviti</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="card-search" class="col-xs-12 col-sm-4">
+                                    <div>
+                                        <a href="courses.html">
+                                            <h1>
+                                                Vai alla pagina di ricerca corsi
+                                                <i class="fas fa-arrow-right"></i>
+                                            </h1>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <footer></footer>
+        </div>
+    </div>
+    <script src='js/main.js'></script>
+</body>
+</html>
